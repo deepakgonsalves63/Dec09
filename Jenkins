@@ -1,0 +1,33 @@
+Jenkins
+pipeline {
+	agent any {
+		stages {
+			stage ("Clone") {
+				steps {
+					echo " Clone Git"
+					git url:"", branch:"main"
+				}
+			}
+			stage ("Build") {
+				steps {
+					echo "Build with Docker"
+					sh "docker build -t httpd1 ."
+				}
+			}
+			stage ("Push") {
+				steps {
+					echo "Push to Docker Hub"
+					
+				}
+			}
+			stage ("run") {
+				steps {
+					echo "Run with K8S"
+					sh "kubectl apply -f d.yml"
+					sh "kubectl apply -f s.yml"
+				}
+			}
+		}
+	}
+		
+}	

@@ -1,0 +1,20 @@
+appVersion: apps/v1
+kind: Deployment
+metadata:
+	name: dpt
+spec:
+	replicas: 2
+	selector:
+		matchLabels:
+			dt: dt1
+	template:
+		metadata:
+			name: pod1
+			labels:
+				dt: dt1
+		spec:
+			containers:
+				- name: c1
+				  image: deepakgonsalves63/httpd1
+			ports:
+				containerPort: 80
