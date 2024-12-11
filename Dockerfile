@@ -1,2 +1,2 @@
 FROM httpd
-COPY /Dec09/index.html /var/www/html/
+RUN rm /usr/local/apache2/htdocs/index.html
