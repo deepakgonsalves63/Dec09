@@ -1,2 +1,3 @@
 FROM httpd
-RUN rm /usr/local/apache2/htdocs/index.html
+WORKDIR /
+COPY /Dec09/index.html /usr/local/apache2/htdocs/
