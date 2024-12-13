@@ -1,11 +1,11 @@
-appVersion: v1
-kind: service
+apiVersion: v1
+kind: Service
 metadata:
   name: s1
 spec:
-  ports:
-    port: 80
-    targetPort: 80
   selector:
     dt: dt1
-  type: NodeIP
+  ports:
+    - port: 80
+      targetPort: 80
+  type: NodePort
